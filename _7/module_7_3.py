@@ -8,7 +8,6 @@ class WordsFinder:
         all_words = {}
         for name in self.files_names:
             with open(name, encoding='utf-8') as file:
-                p = [',', '.', '=', '!', '?', ';', ':', ' - ']
                 words = []
                 for line in file:
                     line = line.translate(str.maketrans('', '', string.punctuation.replace('-', '')))
