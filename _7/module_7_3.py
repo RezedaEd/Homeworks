@@ -22,7 +22,7 @@ class WordsFinder:
             if word in words:
                 result_dict[name] = words.index(word) + 1
             else:
-                return 'Искомое слово не найдено.'
+                result_dict[name] = 'Искомое слово не найдено.'
         return result_dict
 
     def count(self, word):
@@ -38,5 +38,5 @@ class WordsFinder:
 d = WordsFinder('Rudyard Kipling - If.txt', 'Walt Whitman - O Captain! My Captain!.txt')
 print(d.files_names)
 print(d.get_all_words())
-print(d.find('tHe'))
+print(d.find('tHat'))
 print(d.count('tHE'))
