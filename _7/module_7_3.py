@@ -28,7 +28,6 @@ class WordsFinder:
     def count(self, word):
         word = word.casefold()
         result_dict = {}
-        count = 0
         for name, words in self.get_all_words().items():
             result_dict[name] = words.count(word)
         return result_dict
