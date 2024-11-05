@@ -8,7 +8,7 @@ class Knight(threading.Thread):
         self.power = power
         self.enemies = 100
 
-    def run(self, ):
+    def run(self):
         print(f'{self.name}, на нас напали!')
         start_time = time.time()
         while self.enemies > 0:
