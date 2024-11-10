@@ -22,13 +22,13 @@ class Cafe:
         self.queue_at_cafe = Queue()
 
     def guest_arrival(self, *guests):
+        free_tables = [table for table in self.tables if table.guest == None]
         for guest in guests:
-            for table in self.tables:
-                if table.guest == None:
-                    table.guest = guest
-                    guest.start()
-                    print(f'{guest.guest_name} сел(-а) за стол номер {table.number}')
-                    break
+            if free_tables:
+                table = free_tables.pop(0)
+                table.guest = guest
+                guest.start()
+                print(f'{guest.guest_name} сел(-а) за стол номер {table.number}')
             else:
                 self.queue_at_cafe.put(guest)
                 print(f'{guest.guest_name} ожидает в очереди.')
